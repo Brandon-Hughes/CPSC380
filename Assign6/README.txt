@@ -2,7 +2,7 @@ Name: Brandon Hughes
 Student ID: 2405732
 Chapman email: bhughes@chapman.edu 
 Course number and section: CPSC 380-01
-Programming Assignment 4: CPU Scheduling
+Programming Assignment 6: Backing Store
 
 Source Files: 
     - vmmgr.c 
