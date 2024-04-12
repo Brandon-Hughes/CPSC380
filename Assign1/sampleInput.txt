@@ -1,0 +1,30 @@
+The above program uses printf, which under the hood makes a system call to write those
+bytes to stdout. But write(...) is a C function call, not a system call! write() is a
+wrapper around the system call, and its implementation varies depending on the OS. But what is
+the function write doing? Going one level deeper, we can call the syscall function with the
+same arguments, plus the argument SYS_write specifying the system call number:
+Write a C/C++ program that only uses only standard system calls to copy the contents of one file
+to another file. You should only have to use the open() (SYS_open),
+close()(SYS_close), read()(SYS_read) and write()(SYS_write) system
+calls. You can use printf() or fprintf() for error or informational messaging. Your
+program should not explicitly prompt the user for input/output filenames but rather those should
+be provided on the command line.
+Simple File Copy Program Implementation
+The file copy program (syscpy.c) is a simple text-based program that takes two arguments from
+the command line, again no prompting the user from within the program.
+To start the file copy program
+./syscpy < input file> <output file>
+where <input file> is the file that is to be copied and <output file> is the file that is copied to.
+After your program completes you should be able to do a “diff” command on the two files and
+they should be identical.
+Error Handling
+Perform the necessary error checking to ensure that the input file exists and that the output file
+can be written. You can use the system error “errno” and “strerror” to provide additional error
+messaging.
+Grading
+The program will be graded on the basic functionality, error handling and how well the
+implementation description was followed. Be sure to name your program syscpy.c (no extra
+characters, capitals). Note that documentation and style are worth 10% of the assignment's grade!
+Submission
+The program (source code only), sample output and the README file should be posted to
+Chapman Canvas on the due date.
